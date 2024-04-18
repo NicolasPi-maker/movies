@@ -1,11 +1,11 @@
 <script setup lang="ts">
-
 </script>
 
 <template>
-  $END$
+  <div>
+    <h1>MOVIX</h1>
+  </div>
 </template>
 
 <style scoped>
-
 </style>
