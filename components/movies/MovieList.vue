@@ -43,9 +43,7 @@ onMounted(async () => {
 });
 
 const determineRateColor = (rate: number) => {
-  return rate < 5 ? 'bg-red-400' :
-      rate < 7 ? 'bg-yellow-400' :
-          rate >= 7 ? 'bg-green-400' : 'bg-gray-400';
+  return rate < 5 ? 'bg-red-400' : rate < 7 ? 'bg-yellow-400' : rate >= 7 ? 'bg-green-400' : 'bg-gray-400';
 }
 </script>
 
@@ -58,7 +56,7 @@ const determineRateColor = (rate: number) => {
           <NuxtLink :to="`/movies/${movie.id}`">
             <NuxtImg :src="'https://image.tmdb.org/t/p/w500' + movie.poster_path" :alt="movie.title" class="w-auto rounded" />
             <h3 class="absolute text-white bg-primary rounded p-2 m-3 text-sm line-clamp-2 bottom-0 right-50 shadow">{{ movie.original_title }}</h3>
-            <div class="absolute average-point w-3 h-3 bg-red-400 rounded-full m-2 flex justify-center items-center shadow-2xl" :class="determineRateColor(movie.vote_average)">
+            <div class="absolute average-point w-3 h-3 rounded-full m-2 flex justify-center items-center shadow-2xl" :class="determineRateColor(movie.vote_average)">
               <p class="text-white font-bold">{{ movie.vote_average.toFixed(1) }}</p>
             </div>
           </NuxtLink>
